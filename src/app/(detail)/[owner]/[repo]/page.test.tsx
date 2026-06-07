@@ -1,7 +1,9 @@
-import { cleanup, render, screen } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { ExternalServiceError, RepoNotFoundError } from "@/app/_shared/github/errors";
 import { err, ok } from "@/utils/result";
+import { cleanup, render, screen } from "@testing-library/react";
+import { notFound } from "next/navigation";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import DetailPageRoute from "./page";
 
 // vi.hoisted: vi.mock ファクトリより先に評価されるため、モック内で参照できる
 const mocks = vi.hoisted(() => ({ execute: vi.fn() }));
@@ -35,9 +37,6 @@ vi.mock("next/navigation", () => ({
     throw new Error("NEXT_NOT_FOUND");
   }),
 }));
-
-import { notFound } from "next/navigation";
-import DetailPageRoute from "./page";
 
 beforeEach(() => {
   mocks.execute.mockReset();
