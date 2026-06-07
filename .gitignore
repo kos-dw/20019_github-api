@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -203,7 +204,14 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+# playwright (e2e)
+/test-results
+/playwright-report
+/blob-report
+/playwright/.cache
+
 # orignal
 .bak
 secrets
 .secrets
+.vscode

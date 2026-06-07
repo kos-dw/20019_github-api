@@ -1,0 +1,15 @@
+{
+  "settings": {
+    "bullet": "-"
+  },
+  "plugins": [
+    "remark-gfm",
+    [
+      "remark-toc",
+      {
+        "heading": "目次|table of contents",
+        "maxDepth": 3
+      }
+    ]
+  ]
+}
